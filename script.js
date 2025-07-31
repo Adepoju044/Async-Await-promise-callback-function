@@ -43,3 +43,30 @@ console.log(result);
 };
 
 fetchInformation()
+
+async function fetchInformation() {
+  const user1Promise = new Promise(resolve => {
+    setTimeout(() =>{
+         const user ={
+            name: 'fathia',
+            job: "software developer",
+        };
+         resolve("user fathia")
+         }, 3000);
+  });
+  
+  const user2Promise = new Promise(resolve => {
+    setTimeout(() => {
+        const user ={
+            name: 'fathia',
+            job: "software developer",
+        }; 
+        resolve("user fathia");
+        }, 3000);
+  });
+  
+  const [user1, user2] = await Promise.all([user1Promise, user2Promise]);
+  console.log(user1, user2);
+}
+
+fetchInformation();
