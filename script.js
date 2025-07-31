@@ -9,7 +9,7 @@ function userName (callback){
     }, 3000);
 }
 userName((user) =>{
-    console.log(`user ${user.name}`);
+    console.log(`user:${user.name}`);
 });
 
 //  PROMISE
@@ -25,7 +25,7 @@ function getPromise (){
         }
 )
 }
-getPromise().then((user)=> console.log(`user ${user.name}`));
+getPromise().then((user)=> console.log(`user:${user.name}`));
 
 // ASYNC AWAIT
 async function fetchInformation (){
@@ -35,7 +35,7 @@ async function fetchInformation (){
             name: 'fathia',
             job: "software developer",
         };
-        resolve("user fathia")
+        resolve("user:fathia")
     }, 3000)
 })
 let result = await information;
@@ -45,14 +45,14 @@ console.log(result);
 fetchInformation()
 
 // promise all
-async function fetchInformation() {
+async function fetchInformation2() {
   const user1Promise = new Promise(resolve => {
     setTimeout(() =>{
          const user ={
             name: 'fathia',
             job: "software developer",
         };
-         resolve("user fathia")
+         resolve("user:fathia")
          }, 3000);
   });
   
@@ -62,7 +62,7 @@ async function fetchInformation() {
             name: 'fathia',
             job: "software developer",
         }; 
-        resolve("user fathia");
+        resolve("user:fathia");
         }, 3000);
   });
   
@@ -70,4 +70,4 @@ async function fetchInformation() {
   console.log(user1, user2);
 }
 
-fetchInformation();
+fetchInformation2();
