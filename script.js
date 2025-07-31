@@ -44,6 +44,7 @@ console.log(result);
 
 fetchInformation()
 
+// promise all
 async function fetchInformation() {
   const user1Promise = new Promise(resolve => {
     setTimeout(() =>{
